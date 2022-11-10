@@ -11,7 +11,7 @@ iOS version of the app can be found [here](https://github.com/solarlabsteam/sola
 - Sync gradle files.
 - Build.
 
-### Pre run setup
+## Pre run setup
 
 - Set your Solar backend endpoint in the [Constants.kt](https://github.com/solarlabsteam/solar-dvpn-community-core-android/blob/da5130bab8467e949b254dee0e0501756efbf969/constants/src/main/java/ee/solarlabs/constants/Constants.kt#L11) file.
 - Change the `applicationId` in the ui [build.gradle](https://github.com/solarlabsteam/solar-dvpn-community-core-android/blob/main/ui/build.gradle#L13) file to your unique id.
