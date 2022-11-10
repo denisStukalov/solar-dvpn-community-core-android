@@ -1,0 +1,13 @@
+rootProject.name = "Solar DVPN Community Project"
+include ':ui'
+include ':domain'
+include ':tunnel'
+include ':cosmos'
+include ':wallet'
+include ':hub'
+include ':solar'
+include ':cache'
+include ':core'
+include ':constants'
+include ':purchase'
+include ':registry'

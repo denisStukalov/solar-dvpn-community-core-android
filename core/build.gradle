@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlinx-serialization'
+}
+apply from: "../dependencies.gradle"
+
+android {
+    namespace 'ee.solarlabs.community.core'
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+
+    defaultConfig {
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        coreLibraryDesugaringEnabled = true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+        resources.excludes.add("META-INF/**")
+        resources.excludes.add("**/attach_hotspot_windows.dll")
+    }
+
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    api project(path: ':domain')
+    api project(path: ':tunnel')
+    api project(path: ':cosmos')
+    api project(path: ':wallet')
+    api project(path: ':hub')
+    api project(path: ':cache')
+    api project(path: ':solar')
+    api project(path: ':purchase')
+    api project(path: ':registry')
+
+    implementation coreDependencies.values()
+    testImplementation coreTestDependencies.values()
+    androidTestImplementation coreAndroidTestDependencies.values()
+
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:$desugarVersion"
+}

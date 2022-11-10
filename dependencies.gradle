@@ -1,0 +1,255 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+ext {
+    //Android
+    androidMinSdkVersion = 26
+    androidTargetSdkVersion = 31
+    androidCompileSdkVersion = 32
+    androidBuildToolsVersion = "30.0.3"
+
+    //Libraries
+
+    kotlinVersion = '1.6.20'
+    koinVersion = '3.2.2'
+    koinExtVersion = '3.0.2'
+    desugarVersion = '1.1.5'
+    coroutineVersion = '1.6.4'
+    gsonVersion = '2.8.7'
+    retrofitVersion = '2.9.0'
+    timberVersion = '4.7.1'
+    annotationVersion = '1.3.0-alpha01'
+    wireguardTunnelVersion = '1.0.20210211'
+    datastoreVersion = '1.0.0-beta02'
+    retrofitVersion = '2.9.0'
+    retrofitGsonVersion = '2.9.0'
+    loggingInterceptorVersion = '4.7.2'
+    retrofitJacksonVersion = '2.1.0'
+    jacksonVersion = '2.7.3'
+    sqliteCipherVersion = '3.5.9@aar'
+    bitcoinVersion = '0.15.2'
+    guavaVersion = '22.0-android'
+    apacheCommonsVersion = '3.6'
+    web3Version = '4.6.0-android'
+    roomVersion = "2.5.0-alpha01"
+    guavaCoroutine = '1.2.1'
+    moshiVersion = '1.13.0'
+    ktorVersion = '2.1.3'
+    androidXTestVersion = '1.4.0'
+    revenueCatVersion = '5.4.0'
+    webkitVersion = '1.5.0'
+    securityCryptoVersion = '1.0.0'
+
+    constraintVersion = '2.1.0'
+    materialVersion = '1.5.0'
+    lifecycleVersion = '2.4.0'
+    archExtensions = '2.2.0'
+
+    //Testing
+
+
+    // Dependencies
+
+    uiDependencies = [
+
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:${constraintVersion}",
+            androidAnnotations: "androidx.annotation:annotation:${annotationVersion}",
+            materialComponents: "com.google.android.material:material:${materialVersion}",
+            archExtensions    : "androidx.lifecycle:lifecycle-extensions:${archExtensions}",
+            lifecycle         : "androidx.lifecycle:lifecycle-common-java8:${lifecycleVersion}",
+            livedataLifecycle : "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycleVersion}",
+            viewModelLifecycle: "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycleVersion}",
+            koin              : "io.insert-koin:koin-android:${koinVersion}",
+            koinCore          : "io.insert-koin:koin-core:${koinVersion}",
+            coroutine         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+            webkit            : "androidx.webkit:webkit:${webkitVersion}"
+    ]
+
+    coreDependencies = [
+            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            ktorServer            : "io.ktor:ktor-server-core-jvm:${ktorVersion}",
+            ktorServerNetty       : "io.ktor:ktor-server-netty-jvm:${ktorVersion}",
+            ktorSocket            : "io.ktor:ktor-server-websockets-jvm:${ktorVersion}",
+            ktorContentNegotiation: "io.ktor:ktor-server-content-negotiation-jvm:${ktorVersion}",
+            ktorGson              : "io.ktor:ktor-serialization-gson-jvm:${ktorVersion}",
+            ktorCallLogging       : "io.ktor:ktor-server-call-logging:${ktorVersion}",
+            koin                  : "io.insert-koin:koin-android:${koinVersion}",
+            koinCore              : "io.insert-koin:koin-core:${koinVersion}",
+            coroutine             : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+            cors                  : "io.ktor:ktor-server-cors:${ktorVersion}",
+            ktorKoin              : "io.insert-koin:koin-ktor:${koinVersion}"
+    ]
+
+    coreTestDependencies = [
+            testServer     : "io.ktor:ktor-server-tests-jvm:${ktorVersion}",
+            testKotlinJunit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}"
+    ]
+
+    coreAndroidTestDependencies = [
+            testServerHost: "io.ktor:ktor-server-test-host:${ktorVersion}",
+            //  testKotlin    : "org.jetbrains.kotlin:kotlin-test:${kotlinVersion}",
+
+            testRunner    : "androidx.test:runner:${androidXTestVersion}",
+            testRules     : "androidx.test:rules:${androidXTestVersion}"
+    ]
+
+
+    /**
+     * Contains all dependencies required for the domain module.
+     */
+    domainDependencies = [
+            kotlin   : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            gson     : "com.google.code.gson:gson:${gsonVersion}",
+            koin     : "io.insert-koin:koin-android:${koinVersion}",
+            koinCore : "io.insert-koin:koin-core:${koinVersion}",
+            coroutine: "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
+    ]
+
+    /**
+     * Contains all dependencies required for the vpn tunnel module.
+     */
+    tunnelDependencies = [
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            wireguardTunnel: "com.wireguard.android:tunnel:${wireguardTunnelVersion}",
+            timber         : "com.jakewharton.timber:timber:${timberVersion}",
+            koinCore       : "io.insert-koin:koin-core:${koinVersion}",
+            datastore      : "androidx.datastore:datastore-preferences:${datastoreVersion}",
+            coroutine      : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+            gson           : "com.google.code.gson:gson:${gsonVersion}"
+    ]
+
+    /**
+     * Contains all dependencies required for the cache module.
+     */
+    cacheDependencies = [
+            kotlin       : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            timber       : "com.jakewharton.timber:timber:${timberVersion}",
+            room         : "androidx.room:room-runtime:${roomVersion}",
+            roomKtx      : "androidx.room:room-ktx:${roomVersion}",
+            koin         : "io.insert-koin:koin-android:${koinVersion}",
+            koinCore     : "io.insert-koin:koin-core:${koinVersion}",
+            koinExt      : "io.insert-koin:koin-android-ext:${koinExtVersion}",
+            coroutine    : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+            coroutineRoom: "androidx.room:room-ktx:${roomVersion}",
+            datastore    : "androidx.datastore:datastore-preferences:${datastoreVersion}",
+            gson         : "com.google.code.gson:gson:${gsonVersion}"
+
+    ]
+
+    cacheAnnotationProcessor = [
+            roomAnnotationProcessor: "androidx.room:room-compiler:${roomVersion}"
+    ]
+
+    cacheKapt = [
+            room: "androidx.room:room-compiler:${roomVersion}"
+    ]
+
+    /**
+     * Contains all dependencies required for the cosmos module.
+     */
+    cosmosDependencies = [
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            timber             : "com.jakewharton.timber:timber:${timberVersion}",
+            androidAnnotations : "androidx.annotation:annotation:${annotationVersion}",
+            guava              : "com.google.guava:guava:${guavaVersion}",
+            apacheCommons      : "org.apache.commons:commons-lang3:${apacheCommonsVersion}",
+            koinCore           : "io.insert-koin:koin-core:${koinVersion}",
+            koin               : "io.insert-koin:koin-android:${koinVersion}",
+
+            //retrofit
+            retrofit           : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGson       : "com.squareup.retrofit2:converter-gson:${retrofitGsonVersion}",
+            retrofitJackson    : "com.squareup.retrofit2:converter-jackson:${retrofitJacksonVersion}",
+            //jackson
+            jackson            : "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}",
+            jacksonAnnotations : "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}",
+            jacksonDataTypeYoda: "com.fasterxml.jackson.datatype:jackson-datatype-joda:${jacksonVersion}",
+            //sqliteChiper
+            sqliteCipher       : "net.zetetic:android-database-sqlcipher:${sqliteCipherVersion}",
+
+            //bitcoin
+            bitcoin            : "org.bitcoinj:bitcoinj-core:${bitcoinVersion}",
+
+            //web3 for ethermint
+            web3               : "org.web3j:core:${web3Version}",
+
+            coroutine          : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+            guavaCoroutine     : "org.jetbrains.kotlinx:kotlinx-coroutines-guava:${guavaCoroutine}"
+    ]
+    /**
+     * Contains all dependencies required for the wallet module.
+     */
+    walletDependencies = [
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            timber            : "com.jakewharton.timber:timber:${timberVersion}",
+            androidAnnotations: "androidx.annotation:annotation:${annotationVersion}",
+            bitcoin           : "org.bitcoinj:bitcoinj-core:${bitcoinVersion}",
+            retrofit          : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            koinCore          : "io.insert-koin:koin-core:${koinVersion}",
+            retrofitGson      : "com.squareup.retrofit2:converter-gson:${retrofitGsonVersion}",
+
+            coroutine         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
+    ]
+    /**
+     * Contains all dependencies required for the hub module.
+     */
+    sentinelDependencies = [
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            timber            : "com.jakewharton.timber:timber:${timberVersion}",
+            androidAnnotations: "androidx.annotation:annotation:${annotationVersion}",
+            koinCore          : "io.insert-koin:koin-core:${koinVersion}",
+
+            //retrofit
+            retrofit          : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGson      : "com.squareup.retrofit2:converter-gson:${retrofitGsonVersion}",
+
+            coroutine         : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+            guavaCoroutine    : "org.jetbrains.kotlinx:kotlinx-coroutines-guava:${guavaCoroutine}",
+            httpCoroutine     : "ru.gildor.coroutines:kotlin-coroutines-okhttp:1.0"
+    ]
+
+    solarDependencies = [
+            kotlin               : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            timber               : "com.jakewharton.timber:timber:${timberVersion}",
+            androidAnnotations   : "androidx.annotation:annotation:${annotationVersion}",
+            koinCore             : "io.insert-koin:koin-core:${koinVersion}",
+            datastore            : "androidx.datastore:datastore-preferences:${datastoreVersion}",
+
+            retrofit             : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            okhttpLogging        : "com.squareup.okhttp3:logging-interceptor:${loggingInterceptorVersion}",
+
+            coroutine            : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+
+
+            moshi                : "com.squareup.moshi:moshi:${moshiVersion}",
+            moshiKotlin          : "com.squareup.moshi:moshi-kotlin:${moshiVersion}"
+
+    ]
+
+    purchaseDependencies = [
+            kotlin    : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            timber    : "com.jakewharton.timber:timber:${timberVersion}",
+            koinCore  : "io.insert-koin:koin-core:${koinVersion}",
+            coroutine : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+
+            revenueCat: "com.revenuecat.purchases:purchases:${revenueCatVersion}"
+    ]
+
+    registryDependencies = [
+            kotlin        : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
+            timber        : "com.jakewharton.timber:timber:${timberVersion}",
+            koinCore      : "io.insert-koin:koin-core:${koinVersion}",
+            coroutine     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}",
+
+            securityCrypto: "androidx.security:security-crypto:${securityCryptoVersion}"
+
+    ]
+
+
+}
