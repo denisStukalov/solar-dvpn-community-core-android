@@ -21,9 +21,9 @@ import ee.solarlabs.community.core.plugins.configureMonitoring
 import ee.solarlabs.community.core.plugins.configureRouting
 import ee.solarlabs.community.core.plugins.configureSerialization
 import ee.solarlabs.community.core.plugins.configureSockets
-import ee.solarlabs.constants.BaseUrl.Companion.CORE_HOST
-import ee.solarlabs.constants.BaseUrl.Companion.CORE_PORT
-import ee.solarlabs.constants.BaseUrl.Companion.PURCHASE_API_KEY
+import ee.solarlabs.constants.Constants.Companion.CORE_HOST
+import ee.solarlabs.constants.Constants.Companion.CORE_PORT
+import ee.solarlabs.constants.Constants.Companion.PURCHASE_API_KEY
 import ee.solarlabs.purchase.core.di.purchaseModule
 import ee.solarlabs.registry.core.di.registryModule
 import io.ktor.server.engine.embeddedServer

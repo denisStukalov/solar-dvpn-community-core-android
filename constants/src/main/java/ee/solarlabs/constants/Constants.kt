@@ -1,6 +1,6 @@
 package ee.solarlabs.constants
 
-class BaseUrl {
+class Constants {
     companion object {
         const val DVPN = "lcd-sentinel.dvpn.solar"
 

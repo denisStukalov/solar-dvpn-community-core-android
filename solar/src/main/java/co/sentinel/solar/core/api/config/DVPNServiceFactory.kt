@@ -4,7 +4,7 @@ import co.sentinel.dvpn.domain.BuildConfig
 import co.sentinel.solar.core.api.DVPNService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import ee.solarlabs.constants.BaseUrl
+import ee.solarlabs.constants.Constants
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -19,7 +19,7 @@ object DVPNServiceFactory {
 
     fun makeService(): DVPNService =
         Retrofit.Builder()
-            .baseUrl(BaseUrl.SOLAR)
+            .baseUrl(Constants.SOLAR)
             .client(makeOkHttpClient())
             .addConverterFactory(GsonConverterFactory.create(makeGson()))
             .build()

@@ -5,13 +5,13 @@ import static co.sentinel.cosmos.base.BaseChain.SENTINEL_MAIN;
 import java.util.concurrent.Executors;
 
 import co.sentinel.cosmos.base.BaseChain;
-import ee.solarlabs.constants.BaseUrl;
+import ee.solarlabs.constants.Constants;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 public class ChannelBuilder {
 
-    private final static String GRPC_SENTINEL_MAIN = BaseUrl.DVPN;
+    private final static String GRPC_SENTINEL_MAIN = Constants.DVPN;
     private final static int PORT_SENTINEL_MAIN = 993;
 
 
