@@ -20,7 +20,7 @@ iOS version of the app can be found [here](https://github.com/solarlabsteam/sola
 <details>
   <summary>Add your UI into the app</summary> 
 
-- navigate to `ui/src/main/assets/www` folder
+- navigate to [ui/src/main/assets/www](https://github.com/solarlabsteam/solar-dvpn-community-core-android/tree/main/ui/src/main/assets/www) folder
 - add the root of your ui, making sure you don't forget your `index.html`.
 
 </details>
